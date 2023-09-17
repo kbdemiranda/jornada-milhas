@@ -1,8 +1,6 @@
 package io.github.jornadamilhas.application.exception;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 

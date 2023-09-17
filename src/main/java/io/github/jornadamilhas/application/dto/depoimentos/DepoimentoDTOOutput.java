@@ -1,6 +1,6 @@
 package io.github.jornadamilhas.application.dto.depoimentos;
 
-import lombok.*;
+import lombok.Data;
 
 
 @Data

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 import static io.github.jornadamilhas.domain.enuns.JornadaMilhas.SCHEMA;
 
@@ -15,13 +16,15 @@ import static io.github.jornadamilhas.domain.enuns.JornadaMilhas.SCHEMA;
 @Builder
 
 @Entity
-@Table(name = "depoimentos", schema = SCHEMA)
-public class Depoimento {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Table(name = "destinos", schema = SCHEMA)
+public class Destino {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String depoimento;
+    @Column(name = "nome_destino", nullable = false)
+    private String nomeDestino;
+    @Column(name = "foto", nullable = false)
     private String foto;
+    @Column(name = "valor", nullable = false)
+    private BigDecimal valor;
+
 }
