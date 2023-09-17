@@ -1,1 +1,21 @@
-
+spring:
+  application:
+    name: Jornada Milhas
+  datasource:
+    url: ${DBURL:jdbc:postgresql://localhost:5432/dev}
+    username: ${DBUSERNAME:postgres}
+    password: ${DBPASSWORD:postgres}
+    driver-class-name: ${DRIVERCLASSNAME:org.postgresql.Driver}
+  jpa:
+    show-sql: ${SHOWSQL:true}
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    default-schema: ${FLYWAYSCHEMA:milhas}
+server:
+  error:
+    include-stacktrace: never
+  port: ${PORT:8080}
+storage:
+  directory: "${user.home}/storage"
