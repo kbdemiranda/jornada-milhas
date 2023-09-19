@@ -27,8 +27,8 @@ public class DestinoServiceImpl implements DestinoService {
     }
 
     @Override
-    public Page<DestinoDTOOutput> listarDestinos(Pageable pageable) {
-        Page<Destino> destinos = destinoRepository.findAll(pageable);
+    public Page<DestinoDTOOutput> listarDestinos(String nomeDestino, Pageable pageable) {
+        Page<Destino> destinos = destinoRepository.findByNomeDestino(nomeDestino, pageable);
         return destinos.map(destino -> modelMapper.map(destino, DestinoDTOOutput.class));
     }
 

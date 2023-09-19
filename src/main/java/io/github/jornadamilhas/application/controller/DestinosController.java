@@ -22,10 +22,11 @@ public class DestinosController {
 
     @GetMapping
     public ResponseEntity<?> listarDestinos(
+            @RequestParam(value = "nomeDestino", required = false) String nomeDestino,
             @RequestParam(value = "page", defaultValue = "0") Integer page,
             @RequestParam(value = "size", defaultValue = "10") Integer size
     ) {
-        return ResponseEntity.ok(destinoService.listarDestinos(PageRequest.of(page, size)));
+        return ResponseEntity.ok(destinoService.listarDestinos(nomeDestino, PageRequest.of(page, size)));
     }
 
     @PostMapping

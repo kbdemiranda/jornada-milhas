@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface DestinoService {
 
-    Page<DestinoDTOOutput> listarDestinos(Pageable pageable);
+    Page<DestinoDTOOutput> listarDestinos(String nomeDestino, Pageable pageable);
     DestinoDTOOutput detalharDestino(Long id);
     DestinoDTOOutput cadastrarDestino(DestinoDTOInput dtoInput);
     DestinoDTOOutput atualizarDestino(Long id, DestinoDTOInput dtoInput);
