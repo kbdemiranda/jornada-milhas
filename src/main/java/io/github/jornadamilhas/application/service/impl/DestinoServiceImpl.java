@@ -42,8 +42,11 @@ public class DestinoServiceImpl implements DestinoService {
     public DestinoDTOOutput cadastrarDestino(DestinoDTOInput dtoInput) {
         Destino destino = Destino.builder()
                 .nomeDestino(dtoInput.getNome())
-                .foto(fotoService.salvarFoto(dtoInput.getFoto()))
+                .meta(dtoInput.getMeta())
+                .fotoPrincipal(fotoService.salvarFoto(dtoInput.getFotoPrincipal()))
+                .fotoSecundaria(fotoService.salvarFoto(dtoInput.getFotoSecundaria()))
                 .valor(dtoInput.getValor())
+                .descricao(dtoInput.getDescricao())
                 .build();
 
         Destino d = destinoRepository.save(destino);
@@ -55,8 +58,11 @@ public class DestinoServiceImpl implements DestinoService {
     public DestinoDTOOutput atualizarDestino(Long id, DestinoDTOInput dtoInput) {
         Destino destino = getDestino(id);
         destino.setNomeDestino(dtoInput.getNome());
-        destino.setFoto(fotoService.salvarFoto(dtoInput.getFoto()));
+        destino.setMeta(dtoInput.getMeta());
+        destino.setFotoPrincipal(fotoService.salvarFoto(dtoInput.getFotoPrincipal()));
+        destino.setFotoSecundaria(fotoService.salvarFoto(dtoInput.getFotoSecundaria()));
         destino.setValor(dtoInput.getValor());
+        destino.setDescricao(dtoInput.getDescricao());
         Destino d = destinoRepository.save(destino);
         return modelMapper.map(d, DestinoDTOOutput.class);
     }

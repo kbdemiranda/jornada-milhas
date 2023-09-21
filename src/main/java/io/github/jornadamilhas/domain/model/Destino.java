@@ -22,9 +22,15 @@ public class Destino {
     private Long id;
     @Column(name = "nome_destino", nullable = false)
     private String nomeDestino;
+    @Column(name = "meta", nullable = false)
+    private String meta;
     @Column(name = "foto", nullable = false)
-    private String foto;
+    private String fotoPrincipal;
+    @Column(name = "fotosegundaria", nullable = false)
+    private String fotoSecundaria;
     @Column(name = "valor", nullable = false)
     private BigDecimal valor;
+    @Column(name = "descricao", nullable = true)
+    private String descricao;
 
 }

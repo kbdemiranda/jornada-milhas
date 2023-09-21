@@ -8,7 +8,10 @@ public class DestinoDTOOutput {
 
     private Long id;
     private String nome;
-    private String foto;
+    private String meta;
+    private String fotoPrincipal;
+    private String fotoSecundaria;
     private BigDecimal valor;
+    private String descricao;
 
 }
